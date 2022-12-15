@@ -5,12 +5,22 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [
     "crud",
     "mongodb"
   ],
   "author": "Max Nguyen",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "body-parser": "^1.20.1",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20"
+  }
 }
