@@ -13,7 +13,7 @@ async function run() {
     const doc = {
     orbitalPeriod: {
         $gt: 5,
-        $lt: 85
+        $lt: 80
     }
     };
 
