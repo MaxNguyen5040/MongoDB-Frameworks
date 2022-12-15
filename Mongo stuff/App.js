@@ -1,0 +1,38 @@
+const { MongoClient } = require("mongodb");
+// Replace the uri string with your MongoDB deployment's connection string.
+const uri = "mongodb+srv://TestUser:TLi5H76TEGp93bxJ@cluster0.0kcxdlo.mongodb.net/?retryWrites=true&w=majority";
+const client = new MongoClient(uri);
+async function run() {
+  try {
+    await client.connect();
+
+    const db = client.db("sample_guides");
+    const coll = db.collection("comets");
+
+    // delete code goes here
+    const doc = {
+    orbitalPeriod: {
+        $gt: 5,
+        $lt: 85
+    }
+    };
+
+    const result = await coll.deleteMany(doc);
+
+    // amount deleted code goes here
+    console.log("Number of documents deleted: " + result.deletedCount);
+
+    
+
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+
+console.log("---------")
+
+
+
+
